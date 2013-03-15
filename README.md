@@ -31,7 +31,3 @@ Attributes
 * `node['ssmtp']['auth_pass']` -  The SMTP password
 * `node['ssmtp']['auth_method']` - Default is nil, but can be set to
   "cram-md5" if needed.
-
-Usage
-=====
-
