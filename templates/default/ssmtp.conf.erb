@@ -8,7 +8,7 @@ mailhub=<%= @mailhub %>
 hostname=<%= @hostname %>
 <% if @rewrite_domain %>
 # Where will the mail seem to come from? replace me with the hostname you want email to come from
-rewriteDomain=<%= @domain %>
+rewriteDomain=<%= @rewrite_domain %>
 <% end %>
 
 <% if @from_line_override %>
@@ -32,8 +32,8 @@ FromLineOverride=YES
 
 <% if @use_auth %>
   # user/pass used to connect to the MTA
-  AuthUser=<%= @auth_username %>
-  AuthPass=<%= @auth_password %>
+  AuthUser=<%= @auth_user %>
+  AuthPass=<%= @auth_pass %>
   <% if @auth_method %>
     AuthMethod=<%= @auth_method %>
   <% end %>

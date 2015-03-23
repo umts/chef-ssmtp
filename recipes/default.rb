@@ -23,27 +23,27 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-package "ssmtp" do
+package 'ssmtp' do
   action :install
 end
 
-template "/etc/ssmtp/ssmtp.conf" do
-  source "ssmtp.conf.erb"
-  owner "root"
-  group "root"
-  mode  "0644"
+template '/etc/ssmtp/ssmtp.conf' do
+  source 'ssmtp.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
   variables(
-    :root_user =>          node['ssmtp']['root_user'],
-    :mailhub =>            node['ssmtp']['mailhub'],
-    :rewrite_domain =>     node['ssmtp']['rewrite_domain'],
-    :hostname =>           node['ssmtp']['hostname'] ,
-    :from_line_override => node['ssmtp']['from_line_override'],
-    :use_tls =>            node['ssmtp']['use_tls'],
-    :use_starttls =>       node['ssmtp']['use_starttls'],
-    :tls_cert =>           node['ssmtp']['tls_cert'],
-    :use_auth =>           node['ssmtp']['use_auth'],
-    :auth_user =>          node['ssmtp']['auth_user'],
-    :auth_pass =>          node['ssmtp']['auth_pass'],
-    :auth_method =>        node['ssmtp']['auth_method']
+    root_user:           node['ssmtp']['root_user'],
+    mailhub:             node['ssmtp']['mailhub'],
+    hostname:            node['ssmtp']['hostname'],
+    rewrite_domain:      node['ssmtp']['rewrite_domain'],
+    from_line_override:  node['ssmtp']['from_line_override'],
+    use_tls:             node['ssmtp']['use_tls'],
+    use_starttls:        node['ssmtp']['use_starttls'],
+    tls_cert:            node['ssmtp']['tls_cert'],
+    use_auth:            node['ssmtp']['use_auth'],
+    auth_user:           node['ssmtp']['auth_user'],
+    auth_pass:           node['ssmtp']['auth_pass'],
+    auth_method:         node['ssmtp']['auth_method']
   )
 end
